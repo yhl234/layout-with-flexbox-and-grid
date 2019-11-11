@@ -1,0 +1,265 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/*
+variables
+*/
+:root {
+  --borderColor: 1px solid #e5e5e5;
+  --padding: 0 15px 0 15px;
+  --textColor: #6c757d;
+}
+
+/*
+fonts
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: inherit;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: var(--padding);
+}
+
+.date {
+  color: var(--textColor);
+}
+
+.box {
+  border-radius: 0.25rem;
+}
+
+/*
+header
+*/
+header {
+  line-height: 1;
+}
+
+header a {
+  text-decoration: none;
+  color: var(--textColor);
+}
+
+header a:hover {
+  color: var(--textColor);
+}
+
+header .headerTop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0.5rem 0 0.5rem 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: var(--borderColor);
+}
+
+header .headerTop h1 {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+header .headerTop .title {
+  color: #000;
+  font-size: 2.25rem;
+  font-weight: 400;
+}
+
+header .headerTop .topRight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header .headerTop .topRight .magnifier {
+  margin-right: 1rem;
+}
+
+header .headerTop .topRight .signUp {
+  border: 1px solid var(--textColor);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+}
+
+header .headerTop .topRight .signUp:hover {
+  color: #fff;
+  background: var(--textColor);
+  text-decoration: none;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+/*
+main
+*/
+main .featureBg {
+  background: #343a40;
+  margin-bottom: 2rem;
+}
+
+main .feature {
+  width: 50%;
+  color: #fff;
+  padding: 3rem;
+  border-radius: 0.25rem;
+}
+
+main .feature h1 {
+  font-style: italic;
+  font-size: 3rem;
+  line-height: 1.2;
+}
+
+main .feature p {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+main .feature a {
+  color: #fff;
+  font-weight: 700;
+}
+
+main .pinned {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+main .pinned .pinnedPosts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-height: 250px;
+  border: var(--borderColor);
+  -webkit-box-shadow: 0 0.25rem 0.75rem #0000000d;
+          box-shadow: 0 0.25rem 0.75rem #0000000d;
+}
+
+main .pinned .pinnedPosts:first-child {
+  margin-right: 15px;
+}
+
+main .pinned .pinnedPosts:last-child {
+  margin-left: 15px;
+}
+
+main .pinned .pinnedPosts .postLeft {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 1.25rem;
+}
+
+main .pinned .pinnedPosts .postLeft h3 {
+  margin-bottom: 0;
+}
+
+main .pinned .pinnedPosts .postLeft h3 a {
+  color: #000;
+}
+
+.blog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.blog h3 {
+  font-style: italic;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: var(--borderColor);
+}
+
+.blog .posts {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 66%;
+          flex: 0 0 66%;
+}
+
+.blog .pagination {
+  margin-bottom: 4rem;
+}
+
+.blog aside {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 33%;
+          flex: 0 0 33%;
+}
+
+.blog aside h4 {
+  font-style: italic;
+}
+
+.blog aside .sideBar-item {
+  padding: 1rem;
+}
+
+.blog aside .aboutBg {
+  background: #f8f9fa;
+}
+
+.blog aside ol,
+.blog aside ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+/*
+footer
+*/
+footer {
+  padding: 2.5rem 0;
+  color: #999;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-top: 0.05rem solid #e5e5e5;
+}
+/*# sourceMappingURL=style.css.map */
