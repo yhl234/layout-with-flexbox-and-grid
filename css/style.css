@@ -28,6 +28,10 @@ h6 {
   color: inherit;
 }
 
+h2 {
+  font-size: 2rem;
+}
+
 h3 {
   font-size: 1.75rem;
 }
@@ -36,6 +40,9 @@ h4 {
   font-size: 1.5rem;
 }
 
+/*
+All site
+*/
 .container {
   max-width: 1140px;
   margin: 0 auto;
@@ -51,7 +58,7 @@ h4 {
 }
 
 /*
-header
+header: headerTop(logo) and Nav
 */
 header {
   line-height: 1;
@@ -122,16 +129,34 @@ header nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 1;
+          flex: 1 0 1;
+  overflow: scroll;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   margin-bottom: 0.5rem;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+header nav::-webkit-scrollbar {
+  display: none;
+}
+
+header nav a {
+  padding-right: 2rem;
+}
+
+header nav a:last-child {
+  padding-right: 0;
 }
 
 /*
-main
+main: one full width post and two with picture*
 */
 main .featureBg {
   background: #343a40;
@@ -163,10 +188,11 @@ main .feature a {
 }
 
 main .pinned {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
   margin-bottom: 1.5rem;
+      grid-template-areas: "left right";
+  gap: 30px;
 }
 
 main .pinned .pinnedPosts {
@@ -180,11 +206,23 @@ main .pinned .pinnedPosts {
 }
 
 main .pinned .pinnedPosts:first-child {
-  margin-right: 15px;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: left;
+}
+
+main .pinned .pinnedPosts:first-child .category {
+  color: #007bff;
 }
 
 main .pinned .pinnedPosts:last-child {
-  margin-left: 15px;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: right;
+}
+
+main .pinned .pinnedPosts:last-child .category {
+  color: #28a745;
 }
 
 main .pinned .pinnedPosts .postLeft {
@@ -202,6 +240,9 @@ main .pinned .pinnedPosts .postLeft h3 a {
   color: #000;
 }
 
+/*
+article and sidebar
+*/
 .blog {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -211,7 +252,7 @@ main .pinned .pinnedPosts .postLeft h3 a {
           justify-content: space-between;
 }
 
-.blog h3 {
+.blog h3:first-child {
   font-style: italic;
   padding-bottom: 1rem;
   margin-bottom: 1.5rem;
@@ -224,8 +265,30 @@ main .pinned .pinnedPosts .postLeft h3 a {
           flex: 0 0 66%;
 }
 
+.blog article {
+  margin-bottom: 4rem;
+}
+
 .blog .pagination {
   margin-bottom: 4rem;
+}
+
+.blog .pagination a {
+  border-radius: 2rem;
+  border: 1px solid #007bff;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.blog .pagination a:last-child {
+  border: 1px solid var(--textColor);
+  color: var(--textColor);
+}
+
+.blog .postTitle {
+  margin-bottom: 0.25rem;
+  font-size: 2.5rem;
 }
 
 .blog aside {
@@ -261,5 +324,29 @@ footer {
   text-align: center;
   background-color: #f9f9f9;
   border-top: 0.05rem solid #e5e5e5;
+}
+
+/*
+Media query
+*/
+@media (max-width: 576px) {
+  main .pinned {
+        grid-template-areas: "left" "right";
+  }
+  main .pinned .pinnedPosts img {
+    display: none;
+  }
+  .blog {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  main .feature {
+    width: 100%;
+  }
+  main .pinnedPosts img {
+    display: none;
+  }
 }
 /*# sourceMappingURL=style.css.map */

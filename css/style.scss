@@ -1,13 +1,13 @@
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 /*
 variables
 */
 :root {
-  --borderColor: 1px solid #e5e5e5;
-  --padding: 0 15px 0 15px;
-  --textColor: #6c757d;
+	--borderColor: 1px solid #e5e5e5;
+	--padding: 0 15px 0 15px;
+	--textColor: #6c757d;
 }
 
 /*
@@ -19,190 +19,272 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  line-height: 1.2;
-  color: inherit;
+	font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+	margin-bottom: 0.5rem;
+	font-weight: 500;
+	line-height: 1.2;
+	color: inherit;
 }
-
+h2 {
+	font-size: 2rem;
+}
 h3 {
-  font-size: 1.75rem;
+	font-size: 1.75rem;
 }
 h4 {
-  font-size: 1.5rem;
+	font-size: 1.5rem;
 }
-
+/*
+All site
+*/
 .container {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: var(--padding);
+	max-width: 1140px;
+	margin: 0 auto;
+	padding: var(--padding);
 }
 .date {
-  color: var(--textColor);
+	color: var(--textColor);
 }
 .box {
-  border-radius: 0.25rem;
+	border-radius: 0.25rem;
 }
+
 /*
-header
+header: headerTop(logo) and Nav
 */
 header {
-  line-height: 1;
+	line-height: 1;
 
-  a {
-    text-decoration: none;
-    color: var(--textColor);
-    &:hover {
-      color: var(--textColor);
-    }
-  }
-  .headerTop {
-    display: flex;
-    padding: 0.5rem 0 0.5rem 0;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: var(--borderColor);
-    // padding: 1rem 0 1rem 0;
-    h1 {
-      margin-bottom: 0;
-      text-align: center;
-    }
-    .title {
-      color: #000;
-      font-size: 2.25rem;
-      font-weight: 400;
-    }
-    .topRight {
-      display: flex;
-      justify-content: center;
-      a {
-      }
-      .magnifier {
-        margin-right: 1rem;
-      }
-      .signUp {
-        border: 1px solid var(--textColor);
-        padding: 0.25rem 0.5rem;
-        font-size: 0.875rem;
-        line-height: 1.5;
-        border-radius: 0.2rem;
-        &:hover {
-          color: #fff;
-          background: var(--textColor);
-          text-decoration: none;
-        }
-      }
-    }
-  }
-  nav {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-    margin-bottom: 0.5rem;
-  }
+	a {
+		text-decoration: none;
+		color: var(--textColor);
+		&:hover {
+			color: var(--textColor);
+		}
+	}
+	.headerTop {
+		display: flex;
+		padding: 0.5rem 0 0.5rem 0;
+		justify-content: space-between;
+		align-items: center;
+		border-bottom: var(--borderColor);
+		// padding: 1rem 0 1rem 0;
+		h1 {
+			margin-bottom: 0;
+			text-align: center;
+		}
+		.title {
+			color: #000;
+			font-size: 2.25rem;
+			font-weight: 400;
+		}
+		.topRight {
+			display: flex;
+			justify-content: center;
+
+			.magnifier {
+				margin-right: 1rem;
+			}
+			.signUp {
+				border: 1px solid var(--textColor);
+				padding: 0.25rem 0.5rem;
+				font-size: 0.875rem;
+				line-height: 1.5;
+				border-radius: 0.2rem;
+				&:hover {
+					color: #fff;
+					background: var(--textColor);
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	nav {
+		display: flex;
+		flex: 1 0 1;
+		overflow: scroll;
+		justify-content: space-between;
+		padding-top: 0.75rem;
+		padding-bottom: 0.75rem;
+		margin-bottom: 0.5rem;
+		// hide scrollbar
+		// thanks https://stackoverflow.com/questions/16670931/hide-scroll-bar-but-while-still-being-able-to-scroll
+		-ms-overflow-style: none; // Internet Explorer 10+
+		scrollbar-width: none; // Firefox
+		&::-webkit-scrollbar {
+			display: none; // Safari and Chrome
+		}
+		a {
+			padding-right: 2rem;
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+	}
 }
 /*
-main
+main: one full width post and two with picture*
 */
 main {
-  .featureBg {
-    background: #343a40;
-    margin-bottom: 2rem;
-  }
-  .feature {
-    width: 50%;
-    color: #fff;
-    padding: 3rem;
-    border-radius: 0.25rem;
-    h1 {
-      font-style: italic;
-      font-size: 3rem;
-      line-height: 1.2;
-    }
-    p {
-      font-size: 1.25rem;
-      font-weight: 300;
-      margin-bottom: 1rem;
-    }
-    a {
-      color: #fff;
-      font-weight: 700;
-    }
-  }
-  .pinned {
-    display: flex;
-    margin-bottom: 1.5rem;
-    .pinnedPosts {
-      display: flex;
-      max-height: 250px;
-      // margin: var(--padding);
-      border: var(--borderColor);
-      box-shadow: 0 0.25rem 0.75rem #0000000d;
-      &:first-child {
-        margin-right: 15px;
-      }
-      &:last-child {
-        margin-left: 15px;
-      }
+	.featureBg {
+		background: #343a40;
+		margin-bottom: 2rem;
+	}
+	.feature {
+		width: 50%;
+		color: #fff;
+		padding: 3rem;
+		border-radius: 0.25rem;
+		h1 {
+			font-style: italic;
+			font-size: 3rem;
+			line-height: 1.2;
+		}
+		p {
+			font-size: 1.25rem;
+			font-weight: 300;
+			margin-bottom: 1rem;
+		}
+		a {
+			color: #fff;
+			font-weight: 700;
+		}
+	}
+	.pinned {
+		display: grid;
+		margin-bottom: 1.5rem;
+		grid-template-areas: "left right";
+		gap: 30px;
+		.pinnedPosts {
+			display: flex;
+			max-height: 250px;
+			border: var(--borderColor);
+			box-shadow: 0 0.25rem 0.75rem #0000000d;
+			&:first-child {
+				grid-area: left;
+				.category {
+					color: #007bff;
+				}
+			}
+			&:last-child {
+				grid-area: right;
+				.category {
+					color: #28a745;
+				}
+			}
 
-      .postLeft {
-        flex: 1;
-        padding: 1.25rem;
-        h3 {
-          margin-bottom: 0;
-          a {
-            color: #000;
-          }
-        }
-      }
-    }
-  }
+			.postLeft {
+				flex: 1;
+				padding: 1.25rem;
+				h3 {
+					margin-bottom: 0;
+					a {
+						color: #000;
+					}
+				}
+			}
+		}
+	}
 }
+/*
+article and sidebar
+*/
 .blog {
-  display: flex;
-  justify-content: space-between;
-  h3 {
-    font-style: italic;
-    padding-bottom: 1rem;
-    margin-bottom: 1.5rem;
-    border-bottom: var(--borderColor);
-  }
-  .posts {
-    flex: 0 0 66%;
-  }
-  .pagination {
-    margin-bottom: 4rem;
-  }
-  aside {
-    flex: 0 0 33%;
-    h4 {
-      font-style: italic;
-    }
-    .sideBar-item {
-      padding: 1rem;
-    }
-    .aboutBg {
-      background: #f8f9fa;
-    }
-    ol,
-    ul {
-      padding-left: 0;
-      list-style: none;
-    }
-  }
+	display: flex;
+	justify-content: space-between;
+	h3:first-child {
+		font-style: italic;
+		padding-bottom: 1rem;
+		margin-bottom: 1.5rem;
+		border-bottom: var(--borderColor);
+	}
+	.posts {
+		flex: 0 0 66%;
+	}
+	article {
+		margin-bottom: 4rem;
+	}
+
+	.pagination {
+		margin-bottom: 4rem;
+		a {
+			border-radius: 2rem;
+			border: 1px solid #007bff;
+			padding: 0.375rem 0.75rem;
+			font-size: 1rem;
+			line-height: 1.5;
+			&:last-child {
+				border: 1px solid var(--textColor);
+				color: var(--textColor);
+			}
+		}
+	}
+	.postTitle {
+		margin-bottom: 0.25rem;
+		font-size: 2.5rem;
+	}
+	aside {
+		flex: 0 0 33%;
+		h4 {
+			font-style: italic;
+		}
+		.sideBar-item {
+			padding: 1rem;
+		}
+		.aboutBg {
+			background: #f8f9fa;
+		}
+		ol,
+		ul {
+			padding-left: 0;
+			list-style: none;
+		}
+	}
 }
 
 /*
 footer
 */
 footer {
-  padding: 2.5rem 0;
-  color: #999;
-  text-align: center;
-  background-color: #f9f9f9;
-  border-top: 0.05rem solid #e5e5e5;
-  p {
-  }
+	padding: 2.5rem 0;
+	color: #999;
+	text-align: center;
+	background-color: #f9f9f9;
+	border-top: 0.05rem solid #e5e5e5;
+	p {
+	}
+}
+
+/*
+Media query
+*/
+
+@media (max-width: 576px) {
+	main {
+		.pinned {
+			grid-template-areas:
+				"left"
+				"right";
+			.pinnedPosts {
+				img {
+					display: none;
+				}
+			}
+		}
+	}
+	.blog {
+		display: block;
+	}
+}
+@media (max-width: 768px) {
+	main {
+		.feature {
+			width: 100%;
+		}
+		.pinnedPosts {
+			img {
+				display: none;
+			}
+		}
+	}
 }
